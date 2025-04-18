@@ -1,0 +1,43 @@
+/* src/components/DetailsForm.css */
+
+/* Base styles for the input, including the transition */
+.details-input {
+    width: 100%;
+    padding: 12px 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    background-color: #ffffff;
+    color: #333;
+    /* Transition for border-color and box-shadow */
+    transition: border-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+  }
+  
+  /* Styles applied when the input receives focus */
+  .details-input:focus {
+    border-color: #87CEEB; /* Sky Blue border */
+    /* Add a subtle glow effect using box-shadow */
+    box-shadow: 0 0 0 3px rgba(135, 206, 235, 0.3); /* Sky blue glow, slightly transparent */
+    /* Remove the default browser outline which can look clunky */
+    outline: none;
+  }
+  
+  /* Optional: Style for the button */
+  .details-button {
+      padding: 12px 25px;
+      cursor: pointer;
+      align-self: flex-start;
+      margin-top: 15px;
+      background-color: #007bff; /* Blue background */
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+      font-weight: 500;
+      transition: background-color 0.2s ease-in-out;
+  }
+  
+  .details-button:hover {
+       background-color: #0056b3; /* Darker blue on hover */
+  }

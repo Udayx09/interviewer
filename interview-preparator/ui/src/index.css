@@ -1,0 +1,91 @@
+/* src/index.css */
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* Define the color schemes the app supports */
+  color-scheme: light dark;
+
+  /* Remove default color/background from :root */
+  /* color: rgba(255, 255, 255, 0.87); */
+  /* background-color: #242424; */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex; /* Consider if you really need flex here for body */
+  place-items: center; /* This centers content if body is the container */
+  min-width: 320px;
+  min-height: 100vh;
+
+  /* Apply default dark mode colors to body */
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  /* Define dark mode button background */
+  background-color: #1a1a1a;
+  /* --- ADD default text color for buttons --- */
+  color: rgba(255, 255, 255, 0.87);
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Light mode overrides for body and button */
+@media (prefers-color-scheme: light) {
+  body {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+    /* --- ADD text color for light mode buttons --- */
+    color: #213547;
+  }
+}
+
+/* Keep #root styles from App.css if needed, but they shouldn't set color directly */
+/* #root { */
+/*   max-width: 1280px; */
+/*   margin: 0 auto; */
+/*   padding: 2rem; */
+/*   text-align: center; */
+/* } */

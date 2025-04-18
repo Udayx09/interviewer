@@ -1,0 +1,122 @@
+/* src/components/TechnicalRound.css */
+
+/* Base styles for individual feedback card */
+.feedback-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    /* Animation */
+    opacity: 0; /* Start hidden for animation */
+    animation: fadeInCard 0.6s ease-out forwards;
+     /* Apply animation delay based on index (set via inline style) */
+    animation-delay: var(--card-delay, 0s);
+}
+
+/* Keyframes for card fade-in */
+@keyframes fadeInCard {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Styles for the collapsible feedback details section */
+.feedback-details {
+  overflow: hidden; /* Crucial for hiding content */
+  transition: max-height 0.45s ease-in-out, opacity 0.3s ease-in-out, visibility 0.45s;
+  visibility: hidden; /* Use visibility for accessibility */
+  max-height: 0; /* Collapsed state */
+  opacity: 0;     /* Collapsed state */
+}
+
+.feedback-details.expanded {
+  max-height: 1000px; /* Set a large enough max-height */
+  opacity: 1;
+  visibility: visible; /* Make visible when expanded */
+}
+
+/* Style for the clickable header */
+.feedback-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 15px; /* Ensure space before collapsed content */
+    cursor: pointer; /* Indicate it's clickable */
+    user-select: none; /* Prevent text selection on click */
+}
+
+.feedback-card-header h4 {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #333;
+    flex-grow: 1;
+    padding-right: 10px;
+}
+
+/* Style for the expand/collapse indicator icon */
+.feedback-toggle-icon {
+    font-size: 1.2em;
+    transition: transform 0.3s ease-in-out;
+    transform-origin: center; /* Rotate around center */
+}
+
+.feedback-toggle-icon.expanded {
+     transform: rotate(180deg);
+}
+
+/* Optional: Style for the inner feedback analysis container */
+.feedback-analysis-content {
+     padding-top: 10px; /* Space after header */
+}
+
+.feedback-analysis-content h5 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Styles for individual feedback blocks (assessment, strength, improvement) */
+.feedback-block {
+    margin-bottom: 15px;
+    padding: 10px 15px; /* Adjusted padding */
+    border-radius: 4px;
+}
+.feedback-block strong {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.feedback-block strong span { /* Icon */
+    margin-right: 8px;
+    font-size: 1.1em;
+}
+.feedback-block p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.assessment-block { background: #f0f0f0; }
+.assessment-block strong { color: #333; }
+.assessment-block p { color: #333; }
+
+.positive-block { background: #e6ffed; border-left: 4px solid #28a745; }
+.positive-block strong { color: #155724; }
+.positive-block p { color: #155724; }
+
+.improvement-block { background: #e7f3ff; border-left: 4px solid #007bff; }
+.improvement-block strong { color: #004085; }
+.improvement-block p { color: #004085; }
+
+/* Raw feedback style */
+.raw-feedback {
+    font-size: 0.85em;
+    color: #888;
+    margin-top: 15px;
+    font-style: italic;
+    border-top: 1px dashed #ccc;
+    padding-top: 10px;
+}
